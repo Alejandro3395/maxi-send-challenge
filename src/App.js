@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
+import styles from "./App.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { setSelectedPage, setHasErrorState } from "./store/appStateSlice";
 
 function App() {
+  const selectedPage = useSelector((state) => state.appState.selectedPage);
+  const isLoading = useSelector((state) => state.appState.isLoading);
+  const hasError = useSelector((state) => state.appState.hasError);
+  const dispatch = useDispatch()
+
+  function onPageSelected(pageName) {
+    dispatch(setSelectedPage(pageName));
+  }
+
+  function onHasErrorState(hasError) {
+    dispatch(setHasErrorState(hasError))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Header selectedPage={selectedPage} setSelectdPageHandler={onPageSelected} setHasErrorStateHandler={onHasErrorState}></Header>
+      <div className={styles.appContent}>
+        {isLoading ? (
+          <div>Loading content...</div>
+        ) : hasError ? (
+          <div>Oops, something went wrong...</div>
+        ) : (
+          <Content pageSelected={selectedPage} setSelectedPageHandler={onPageSelected}></Content>
+        )}
+      </div>
+      <Footer></Footer>
     </div>
   );
 }

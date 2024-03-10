@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title {
+    font-weight: bold;
+    color: white;
+}
+
+.mainSection {
+    composes: appPadding from '../../App.module.css';
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: linear-gradient(to bottom, #77a5ff, #4082ff, #3a76e5);
+}
+
+.subSection {
+    composes: appPadding from '../../App.module.css';
+    background-color: #414141;
+    color: white;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.button {
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.logInButton {
+    composes: button;
+    background-color: transparent;
+}
+
+.trialButton {
+    composes: button; 
+    background-color: darkslategray;
+}
+
+.homeButton {
+    cursor: pointer;
+}

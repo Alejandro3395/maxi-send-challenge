@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Front-end challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Configuración y ejecucion
+1) Clonar el repositoria y navegar a la carpeta que se crea.
+2) Dentro de la carpeta del proyecto ejecutar el comando:
 
-In the project directory, you can run:
+            npm install // Este comando instalara las dependencias necesarias
+3) Ejecutar el comando para iniciar la aplicacion
+            
+            npm start       
+    Abre el navegador en http://localhost:3000 para visualizar la aplicacion en el browser.
+
+## Notas
+* Tanto en la pagina de Series y de Movies se tiene agregado un timeout the 1s para que se logre visualizar la pantalla de carga.
+* La mayoria de las URLs de los posters de las series/movies que se proporcionaron en sample.json ya no funcionan.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## ¿Cómo decidió las opciones técnicas y arquitectónicas utilizadas como parte de su solución?
+Para ser honesto no tengo mucha experiancia desarrollando aplicaciones con react pero mi approach fue investigar todo lo que necesitaba para llevar acabo este challenge desde leer la documentacion de react y react-redux directamente de sus paginas hasta leer ciertos blogs para saber como organizar las carpetas y los archivos terminando con esta estructura:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* assets: Los recursos que se utilizan en la aplicacion.
+* components: Esta carpeta contiene todos los componentes que practicamente solo se utilizan para mostrar contenido y que no acceden directamente al estado (store redux)
+* containers: Esta carpeta contiene todos los componentes que tienen acceso directamente al estado de la aplicacion. y que no pueden lanzar eventos que hagan cambios en el estado.
+* store: Esta carpeta contiene todos los archivos relacionados al estado de la aplicacion. 
 
-### `npm run build`
+¿Hay alguna mejora que pueda hacer en su envío?
+* Desafortunadamente no me alcanzo el tiempo para realizar las pruebas unitarias pues como ya habia comentado no tengo mucha experiencia con estas.
+* En cuanto a mis componentes MoviesPage y SeriesPage, despues de investigar un poco es posible que estos dos se pueden crear atraves de un HOC (High order component) y de estas forma reducir el codigo repetido.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¿Qué haría de manera diferente si se le asignara más tiempo?
+* Leer mas acerca de las pruebas unitarias y llevarlas acabo.
+* Igual agregar pruebas e2e.

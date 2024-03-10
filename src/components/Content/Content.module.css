@@ -1,0 +1,31 @@
+.content {
+    display: flex;
+    gap: 16px;
+}
+
+.card {
+    composes: card from '../Card/Card.module.css';
+}
+
+.posterContainer {
+    composes: posterContainer from '../Card/Card.module.css';
+    background: #414141;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.poster {
+    width: 100%;
+}
+
+.posterLabel {
+    position: absolute;
+    left: 38%;
+    color: white;
+    font-weight: 700;
+}
+
+.titleContainer {
+    composes: titleContainer from '../Card/Card.module.css';
+}

@@ -1,0 +1,58 @@
+.footer {
+    padding: 32px 100px 38px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    gap: 16px;
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    color: lightgray;
+}
+
+.linksContainer {
+    font-size: 12px
+}
+
+.divider {
+    padding: 0 8px;
+}
+
+.copyrightContainer {
+    font-size: 10px;
+}
+
+.subSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logoContainer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.socialContainer {
+    composes: logoContainer;
+}
+
+.socialLogo {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.storeContainer {
+    composes: logoContainer;
+    flex-wrap: wrap;
+}
+
+.storeLogo {
+    height: 36px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,15 @@
+.appPadding {
+  padding: 0 100px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.appContent {
+  flex: 1;
+  overflow: auto;
+
+  padding: 20px 100px 0;
+}

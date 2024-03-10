@@ -1,0 +1,63 @@
+.card {
+    height: 370px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.5);
+    opacity: .7;
+    border: 2px solid white;
+    margin: -4px;
+}
+
+.posterContainer {
+    flex: 1;
+}
+
+.poster {
+    height: 100%;
+    width: 100%;
+}
+
+.titleContainer {
+    color: black;
+    background-color: transparent;
+    text-align: center;
+}
+
+.cardModal {
+    display: flex;
+    flex-wrap: wrap;
+    height: 370;
+    width: 500;
+}
+
+.cardDetails {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px;
+    gap: 16px;
+}
+
+.cardPoster {
+    max-width: 100%;
+}
+
+.modalPoster {
+    max-height: 500px;
+    max-width: 100%;
+}
+
+.releaseYear {
+    border: solid 1px;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    border-radius: 12px;
+    padding: 8px;
+    width: fit-content;
+}
